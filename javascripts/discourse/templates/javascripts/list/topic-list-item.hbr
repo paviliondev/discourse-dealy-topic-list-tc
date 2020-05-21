@@ -6,23 +6,22 @@
 
 <td class='main-link clearfix' colspan="{{titleColSpan}}">
   {{#if tilesStyle}}
-    <div class="tiles-grid-item-content">
-      <div class="topic-header-grid">
-          {{raw "list/topic-list-title" topic=topic tilesStyle=tilesStyle showTopicPostBadges=showTopicPostBadges}}
-          <div class="topic-category">
-            {{#if showCategoryBadge}}
-              {{category-link topic.category}}
-            {{/if}}
-          </div>
-        </div>
+      <div class="topic-category">
+        {{category-link topic.category}}
+      </div>
+
+      {{raw "list/topic-list-title" topic=topic tilesStyle=tilesStyle showTopicPostBadges=showTopicPostBadges}}
     {{/if}}
+
+    <div class='topic-author'><a href="{{topic.creator.path}}" data-user-card="{{topic.creator.username}}"><span>{{avatar topic.creator imageSize="small"}}</span><span>{{topic.creator.name}}</span></a></div>
 
     {{#if showThumbnail}}
       {{raw "list/topic-thumbnail" topic=topic thumbnails=thumbnails category=category opts=thumbnailOpts}}
     {{/if}}
 
-    <div class="topic-details">
     {{#if notTilesStyle}}
+
+      <div class="topic-details">
       {{raw "list/topic-list-title"
         topic=topic
         tilesStyle=tilesStyle
@@ -35,10 +34,10 @@
         </div>
       {{/if}}
       {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
-    {{/if}}
 
-    {{#if expandPinned}}
-      {{raw "list/topic-excerpt" topic=topic}}
+      {{#if expandPinned}}
+        {{raw "list/topic-excerpt" topic=topic}}
+      {{/if}}
     {{/if}}
 
     {{#if notTilesStyle}}
@@ -51,11 +50,7 @@
     {{/if}}
 
     {{#if tilesStyle}}
-      </div>
       {{raw 'list/topic-meta' likesHeat=likesHeat title=view.title topic=topic}}
-      {{#if showActions}}
-        {{raw "list/topic-actions" likeCount=likeCount topicActions=topicActions}}
-      {{/if}}
     {{/if}}
 </td>
 

@@ -1,0 +1,8 @@
+<div class='topic-users'>
+  <div class="inline">
+      <a href="{{topic.user.path}}" data-user-card="{{topic.user.username}}" class="{{topic.user.extras}}">
+        {{avatar topic.user avatarTemplatePath="user.avatar_template" usernamePath="user.username" imageSize="small"}}
+        {{topic.user.username}}
+      </a>
+  </div>
+</div>
