@@ -1,2 +1,2 @@
 # discourse-dealy-topic-list-tc
-A bespoke masonry format for Dealy
+A Theme Component for Discourse which delivers a bespoke masonry format for Dealy
